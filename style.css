@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Базові налаштування: Скидання відступів та Flexbox для притискання футера
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Хакерський моноширинний шрифт */
+    font-family: 'Consolas', 'Courier New', monospace; 
+    background-color: #0d1117; /* Темний фон */
+    color: #c9d1d9; /* Світло-сірий текст */
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   Структура сайту (Обертка, Контент)
+   ========================================================================== */
+.wrapper {
+    flex: 1 0 auto; /* Основна частина займає весь вільний простір */
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px; /* Обмеження ширини для великих моніторів */
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.content {
+    flex-grow: 1; /* Дозволяє контенту розтягуватися */
+    margin: 20px 0;
+}
+
+/* Заголовки та текст у контенті */
+.content h2 { 
+    color: #3fb950; /* Неоново-зелений */
+    margin-bottom: 20px; 
+    border-bottom: 2px solid #30363d; 
+    padding-bottom: 10px; 
+    font-size: 2em;
+}
+
+.content p { 
+    margin-bottom: 15px; 
+    font-size: 1.1em; 
+}
+
+/* ==========================================================================
+   Оформлення шапки (Header)
+   ========================================================================== */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #3fb950;
+    box-shadow: 0 0 20px rgba(63, 185, 80, 0.2);
+}
+
+.header h1 {
+    color: #58a6ff;
+    font-size: 2.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+/* ==========================================================================
+   Спливаюче меню (Навігація) 
+   ========================================================================== */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menuMain {
+    position: relative;
+    display: inline-block;
+}
+
+.menu {
+    background-color: #238636;
+    color: white;
+    padding: 14px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.menuPopup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Чітко фіксуємо меню під кнопкою з відступом */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #161b22;
+    min-width: 220px;
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.8);
+    z-index: 10;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    /* Видалено margin-top, який створював проблему */
+}
+
+/* НЕВИДИМИЙ МІСТ: Саме це виправляє "зникнення" меню */
+.menuPopup::before {
+    content: "";
+    position: absolute;
+    top: -15px; /* Перекриває порожнечу над меню */
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
+}
+
+.menuPopup a {
+    color: #c9d1d9;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s, color 0.3s, padding-left 0.3s;
+}
+
+/* Скруглення кутів при наведенні на перше/останнє посилання */
+.menuPopup a:first-child { border-radius: 8px 8px 0 0; }
+.menuPopup a:last-child { border-radius: 0 0 8px 8px; }
+
+.menuPopup a:hover { 
+    background-color: #1f2428;
+    color: #58a6ff;
+    padding-left: 25px; 
+}
+
+/* Активація меню при наведенні */
+.menuMain:hover .menuPopup { display: block; }
+.menuMain:hover .menu { 
+    background-color: #2ea043; 
+    box-shadow: 0 0 15px rgba(46, 160, 67, 0.5); 
+}
+
+/* ==========================================================================
+   Зображення та спеціальні тексти
+   ========================================================================== */
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #30363d;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.highlight-text {
+    text-align: center; 
+    font-size: 1.2em; 
+    color: #8b949e; 
+    margin: 30px 0;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Сітка карток (Сучасна альтернатива Float)
+   ========================================================================== */
+.clearfix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ==========================================================================
+   Картки хакерів (Трансформації)
+   ========================================================================== */
+.hacker-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s, border-color 0.4s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hacker-card h3 { 
+    margin-bottom: 15px; 
+    font-size: 1.5em; 
+    letter-spacing: 1px;
+}
+
+.hacker-card p { 
+    font-size: 1em; 
+    color: #a5b0b5; 
+}
+
+/* Кольорові смужки зліва для кожної картки (псевдоелементи) */
+.hacker-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 5px; height: 100%;
+}
+.card-white::before { background-color: #ffffff; box-shadow: 0 0 10px #ffffff; }
+.card-grey::before { background-color: #8b949e; }
+.card-black::before { background-color: #f85149; box-shadow: 0 0 10px #f85149; }
+.card-kiddie::before { background-color: #d29922; }
+.card-hacktivist::before { background-color: #a371f7; }
+
+/* Ефект при наведенні на картку */
+.hacker-card:hover {
+    transform: translateY(-12px) scale(1.02); /* Збільшення і підняття блоку */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    border-color: #58a6ff;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   Підвал сайту (Footer)
+   ========================================================================== */
+.footer {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 25px;
+    background-color: #010409;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.95em;
+    border-radius: 8px;
+    margin-top: auto; /* Виштовхує футер до самого низу */
+}
+
+.footer strong {
+    color: #c9d1d9;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хакери: Хто вони?</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <style>
+        .hats-image-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .hats-image-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid #3fb950;
+            box-shadow: 0 0 15px rgba(63, 185, 80, 0.2);
+            transition: transform 0.4s;
+            background-color: #fff; /* Білий фон для PNG з прозорістю */
+            padding: 10px;
+        }
+        .hats-image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(63, 185, 80, 0.5);
+        }
+        .hats-image-container figcaption {
+            margin-top: 10px;
+            color: #8b949e;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 title="Класифікація хакерів">Світ Хакерів: За межею коду</h1>
+        </header>
+
+        <nav>
+            <div class="menuMain">
+                <button class="menu">☰ Навігація по сайту</button>
+                <div class="menuPopup">
+                    <a href="index.html">Головна сторінка</a>
+                    <a href="hackers.html">Хто такі хакери?</a>
+                    <a href="#classification">Класифікація</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <section>
+                <h2 title="Прочитай уважно!">Міфи та реальність</h2>
+                
+                <img src="image_0.png.png" alt="Матричний код та кібербезпека" class="hero-image">
+
+                <p>
+                    Якщо запитати звичайну людину, хто такий хакер, вона найімовірніше опише хлопця в чорному худі, який сидить у темряві і швидко друкує зелений код. Але насправді термін "хакер" означає висококваліфікованого ІТ-спеціаліста, який досконало розуміє архітектуру комп'ютерних систем, мереж та програмного забезпечення.
+                </p>
+                <p>
+                    Сьогодні хакери — це не лише злочинці. Великі корпорації наймають їх у штат, щоб ті постійно "атакували" їхні системи та знаходили вразливості раніше, ніж це зроблять справжні зловмисники.
+                </p>
+                
+                <h2 id="classification" style="margin-top: 50px;">Кольори капелюхів: Хто є хто?</h2>
+                
+                <figure class="hats-image-container">
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200311232857/Types-of-Hackers.png" alt="Типи хакерів: Білі, Сірі, Чорні капелюхи">
+                    <figcaption>Три обличчя хакінгу: від Чорних до Білих капелюхів</figcaption>
+                </figure>
+
+                <p class="highlight-text">
+                    ⚡ Наведи мишкою на картки нижче, щоб дізнатися більше!
+                </p>
+
+                <div class="clearfix">
+                    <div class="hacker-card card-white">
+                        <h3 style="color: #ffffff;">Білі капелюхи (White Hats)</h3>
+                        <p>Це "добрі" хакери, або фахівці з етичного хакінгу (Ethical Hackers). Вони шукають вразливості в системах виключно з дозволу власників.</p>
+                    </div>
+
+                    <div class="hacker-card card-grey">
+                        <h3 style="color: #c9d1d9;">Сірі капелюхи (Grey Hats)</h3>
+                        <p>Ця категорія балансує на межі закону. Вони зламують системи без дозволу, але не для крадіжки грошей чи даних. Знайшовши вразливість, вони повідомляють власника.</p>
+                    </div>
+
+                    <div class="hacker-card card-black">
+                        <h3 style="color: #f85149;">Чорні капелюхи (Black Hats)</h3>
+                        <p>Класичні кіберзлочинці. Їхня мета — фінансова вигода, крадіжка комерційної таємниці, шпигунство або знищення інфраструктури.</p>
+                    </div>
+
+                    <div class="hacker-card card-kiddie">
+                        <h3 style="color: #d29922;">Скрипт-кідді (Script Kiddies)</h3>
+                        <p>Новачки або аматори, які не мають глибоких знань у програмуванні. Використовують готові програми та скрипти з інтернету.</p>
+                    </div>
+
+                    <div class="hacker-card card-hacktivist">
+                        <h3 style="color: #a371f7;">Хактивісти (Hacktivists)</h3>
+                        <p>Хакери, чия головна мета — не гроші, а просування політичних, соціальних чи релігійних ідей. Найвідоміший приклад — угруповання Anonymous.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <address>
+                <strong>Лабораторна робота з Веб-технологій</strong><br>
+                Студент групи 2БС-25б | ВНТУ, м. Вінниця, 2026<br>
+                <em>Сайт оптимізовано та стилізовано для захисту.</em>
+            </address>
+        </footer>
+    </div>
+</body>
+</html>
