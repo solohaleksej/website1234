@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основи Кібербезпеки</title>
+    
+    <!-- Підключення зовнішнього файлу стилів (базовий дизайн) -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- Внутрішня таблиця стилів (специфічна для цієї сторінки) -->
+    <style>
+        /* Акценти тексту */
+        .highlight-text {
+            color: #ff7b72; 
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .triad-text {
+            color: #58a6ff; 
+            font-style: italic;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+        }
+
+        /* Стилізація таблиці під темну кібер-тему */
+        .cyber-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background-color: #161b22;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+        .cyber-table th, .cyber-table td {
+            padding: 16px;
+            border: 1px solid #30363d;
+            text-align: left;
+        }
+        .cyber-table th {
+            background-color: #238636; 
+            color: #ffffff;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+        .cyber-table tr {
+            transition: background-color 0.3s;
+        }
+        .cyber-table tr:hover {
+            background-color: #1f2428; 
+        }
+        .cyber-table td b {
+            color: #c9d1d9;
+        }
+
+        /* Стилізація зображення */
+        .cyber-img-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cyber-img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #3fb950;
+            box-shadow: 0 0 15px rgba(63, 185, 80, 0.2);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .cyber-img-container img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(63, 185, 80, 0.6); 
+        }
+        .cyber-img-container figcaption {
+            margin-top: 12px;
+            color: #8b949e;
+            font-size: 0.95em;
+        }
+
+        /* Посилання у футері */
+        .footer a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+            color: #79c0ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 title="Головна сторінка порталу безпеки">Кібербезпека: Захист у цифровому світі</h1>
+        </header>
+
+        <nav>
+            <div class="menuMain">
+                <button class="menu">☰ Навігація по сайту</button>
+                <div class="menuPopup">
+                    <a href="index.html">Головна сторінка</a>
+                    <a href="hackers.html">Хто такі хакери?</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <article>
+                <h2>Що таке кібербезпека?</h2>
+                <p>
+                    <b>Кібербезпека</b> — це комплексна галузь інформаційних технологій, яка займається захистом комп'ютерних систем, серверів, мобільних пристроїв, електронних систем, мереж і даних від зловмисних цифрових атак. У сучасному світі, де критична інфраструктура, фінансові потоки та особисті дані зберігаються переважно в електронному вигляді, кібербезпека стала однією з найважливіших дисциплін.
+                </p>
+                <p>
+                    Ці атаки зазвичай спрямовані на несанкціонований доступ до конфіденційної інформації, її зміну або знищення, вимагання грошей у користувачів (через програми-вимагачі) або порушення нормальних бізнес-процесів. Наслідки успішних кібератак можуть бути катастрофічними: від втрати репутації та багатомільйонних збитків для корпорацій до крадіжки особистості (identity theft) для звичайних людей.
+                </p>
+                <p>
+                    Швидкий розвиток технологій, таких як Інтернет речей (IoT), штучний інтелект та хмарні обчислення, створює нові вектори для атак, змушуючи фахівців (Blue Team) постійно вдосконалювати методи захисту, щоб бути на крок попереду хакерів.
+                </p>
+
+                <h2>Фундаментальні принципи (Тріада ЦКД)</h2>
+                <p>Уся інформаційна безпека тримається на трьох стовпах, відомих як <span class="triad-text">Тріада ЦКД</span> (або <i>CIA Triad</i> англійською). Це базова модель, розроблена для створення ефективної системи захисту. Якщо зловмиснику вдається порушити хоча б один із цих принципів, система вважається скомпрометованою.</p>
+                
+                <!-- Оновлена таблиця з принципами ЦКД -->
+                <table class="cyber-table">
+                    <thead>
+                        <tr>
+                            <th>Принцип</th>
+                            <th>Суть та Опис</th>
+                            <th>Методи забезпечення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Конфіденційність<br>(Confidentiality)</b></td>
+                            <td>Забезпечення того, що доступ до інформації мають лише ті особи, програми або процеси, які мають на це законне право (авторизацію). Це надійний захист даних від витоку або перехоплення сторонніми.</td>
+                            <td>Системи шифрування даних, використання складних паролів, двофакторна автентифікація (2FA), біометричний доступ (FaceID, відбиток пальця).</td>
+                        </tr>
+                        <tr>
+                            <td><b>Цілісність<br>(Integrity)</b></td>
+                            <td>Гарантія того, що інформація залишається точною, повною та незмінною під час зберігання, обробки або передачі по мережі. Дані не можуть бути непомітно змінені зловмисниками або видалені випадково.</td>
+                            <td>Криптографічні хеш-функції (наприклад, SHA-256), цифрові підписи, суворий контроль версій, регулярне резервне копіювання.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Доступність<br>(Availability)</b></td>
+                            <td>Забезпечення безперебійного та своєчасного доступу до інформації та ресурсів системи для авторизованих користувачів, коли їм це необхідно. Інфраструктура має витримувати навантаження та атаки.</td>
+                            <td>Захист від DDoS-атак, використання резервних серверів (кластеризація), джерела безперебійного живлення (UPS), регулярне обслуговування обладнання.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <figure class="cyber-img-container">
+                    <a href="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200" target="_blank" title="Натисни на картинку, щоб відкрити її в повному розмірі у новій вкладці">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" alt="Кіберзахист та шифрування коду">
+                    </a>
+                    <figcaption><i>Схема кібернетичного захисту даних (Натисніть на фото для збільшення)</i></figcaption>
+                </figure>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <address>
+                <strong>Лабораторна робота з Веб-технологій</strong><br>
+                Студент групи 2БС-25б | ВНТУ, м. Вінниця, 2026<br>
+                <a href="mailto:cybersec@vntu.edu.ua">Зв'язатися з автором (Email)</a>
+            </address>
+        </footer>
+    </div>
+</body>
+</html>
